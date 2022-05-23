@@ -12,6 +12,7 @@
 		33367124281180E5000706D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33367123281180E5000706D5 /* ViewController.swift */; };
 		33367129281180EF000706D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33367128281180EF000706D5 /* Assets.xcassets */; };
 		3336712C281180EF000706D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3336712A281180EF000706D5 /* LaunchScreen.storyboard */; };
+		E1294E112456E8BCFB92B2EA /* Pods_Animechan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75E73DA304309F6717EEE5D /* Pods_Animechan.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		33367128281180EF000706D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3336712B281180EF000706D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3336712D281180EF000706D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A21EA01D2F89E03D02457EFA /* Pods-Animechan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Animechan.release.xcconfig"; path = "Target Support Files/Pods-Animechan/Pods-Animechan.release.xcconfig"; sourceTree = "<group>"; };
+		B75E73DA304309F6717EEE5D /* Pods_Animechan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Animechan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA58D9BA79DE4A2A779C2374 /* Pods-Animechan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Animechan.debug.xcconfig"; path = "Target Support Files/Pods-Animechan/Pods-Animechan.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1294E112456E8BCFB92B2EA /* Pods_Animechan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EE307BF7B244D3BCFD59FFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B75E73DA304309F6717EEE5D /* Pods_Animechan.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		33367113281180E5000706D5 = {
 			isa = PBXGroup;
 			children = (
 				3336711E281180E5000706D5 /* Animechan */,
 				3336711D281180E5000706D5 /* Products */,
+				382435B94E1A6B61089FEC43 /* Pods */,
+				0EE307BF7B244D3BCFD59FFD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = Animechan;
 			sourceTree = "<group>";
 		};
+		382435B94E1A6B61089FEC43 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA58D9BA79DE4A2A779C2374 /* Pods-Animechan.debug.xcconfig */,
+				A21EA01D2F89E03D02457EFA /* Pods-Animechan.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,6 +95,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33367130281180EF000706D5 /* Build configuration list for PBXNativeTarget "Animechan" */;
 			buildPhases = (
+				1925AC18A1C999CF31DED7F2 /* [CP] Check Pods Manifest.lock */,
+				3376F3AE283BF14C00CD2F11 /* ShellScript */,
 				33367118281180E5000706D5 /* Sources */,
 				33367119281180E5000706D5 /* Frameworks */,
 				3336711A281180E5000706D5 /* Resources */,
@@ -128,6 +154,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1925AC18A1C999CF31DED7F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Animechan-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3376F3AE283BF14C00CD2F11 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		33367118281180E5000706D5 /* Sources */ = {
@@ -270,6 +338,7 @@
 		};
 		33367131281180EF000706D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA58D9BA79DE4A2A779C2374 /* Pods-Animechan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -299,6 +368,7 @@
 		};
 		33367132281180EF000706D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A21EA01D2F89E03D02457EFA /* Pods-Animechan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

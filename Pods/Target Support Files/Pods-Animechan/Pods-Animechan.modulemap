@@ -1,0 +1,6 @@
+framework module Pods_Animechan {
+  umbrella header "Pods-Animechan-umbrella.h"
+
+  export *
+  module * { export * }
+}
